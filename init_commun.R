@@ -202,7 +202,7 @@
     push_notification <- function(message) {
       #set_pushover_app(token = "aqnuwg6xg2peviosfmvyb144axsy7p")
       set_pushover_app(token = "a9czybjrpcj5tovv2sj3m9547fvx2h")
-      pushover("message" ,
+      pushover(message ,
                user = "utu2v9dmo21vi7rghrbb1j8imufo84")
     }
     
