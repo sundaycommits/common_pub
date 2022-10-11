@@ -188,25 +188,25 @@
   # Functions : notifications
   {
     push_notification_SMILE <- function(size_bundle) {
-      set_pushover_app(token = "awfo6r5xm9stxiapj1nurm9jum3oa5")
+      set_pushover_app(token = "auzhfncx97vsvfxrjoff9bw1hr2yk")
       pushover(
         message = paste0(
           "a bundle of ",
           size_bundle,
           " fhir procedures was successfully imported to Smile CDR"
         ),
-        user = "upzn6vfauyzmnek2rkrumvfdau16fm"
+        user = "utu2v9dmo21vi7rghrbb1j8imufo84"
       )
     }
     
     push_notification <- function(message) {
-      set_pushover_app(token = "awfo6r5xm9stxiapj1nurm9jum3oa5")
-      pushover(message ,
-               user = "upzn6vfauyzmnek2rkrumvfdau16fm")
+      #set_pushover_app(token = "aqnuwg6xg2peviosfmvyb144axsy7p")
+      set_pushover_app(token = "a9czybjrpcj5tovv2sj3m9547fvx2h")
+      pushover("message" ,
+               user = "utu2v9dmo21vi7rghrbb1j8imufo84")
     }
     
   }
-  
   
   
   }
