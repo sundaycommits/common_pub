@@ -1,6 +1,29 @@
 # Libraries :
 {
-  pacman::p_load(pushoverr,rjson,jsonlite,httr,gmodels,foreach,hms,iterators,chron,xlsx,sqldf,dplyr, 
+  # List of required libraries
+  required_libraries <- c("pushoverr", "rjson", "jsonlite", "httr", "gmodels",
+                          "foreach", "hms", "iterators", "chron",
+                          "sqldf", "dplyr", "stringr", "psych", "tm",
+                          "tidyr", "tidyverse", "RSQLite", "readr", "pastecs",
+                          "DBI", "RODBC", "odbc", "pryr", "readxl", "lubridate",
+                          "sqldf", "data.table", "purrr", "plyr")
+  
+  # Function to check if a package is installed and install it if it's not
+  install_if_not_installed <- function(package) {
+    if (!require(package, character.only = TRUE)) {
+      install.packages(package, dependencies = TRUE)
+      library(package, character.only = TRUE)
+    }
+  }
+  
+  # Loop through the required libraries and install them if needed
+  for (library in required_libraries) {
+    install_if_not_installed(library)
+  }
+  
+  
+  
+  pacman::p_load(pushoverr,rjson,jsonlite,httr,gmodels,foreach,hms,iterators,chron,sqldf,dplyr, 
                  stringr,psych, tm,tidyr,tidyverse,RSQLite,readr,pastecs
                  ,DBI,RODBC,DBI,odbc,pryr,readxl,lubridate,sqldf);
   library(data.table)
