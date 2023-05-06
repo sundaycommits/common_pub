@@ -7,6 +7,7 @@
   library(jsonlite)
   library(purrr)
   library(plyr)
+  library(httr)
 }
 
 # Functions : general
