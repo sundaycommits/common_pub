@@ -177,13 +177,7 @@
   
 
   
-  hexa_to_text <- function(arg) {
-    s <- paste0(arg, sep = " ")
-    h <- sapply(seq(1, 2, by = 2), function(x)
-      substr(s, x, x + 1))
-    y <- rawToChar(as.raw(strtoi(h, 16L)))
-    return(jsonlite::prettify(y))
-  }
+ 
   
   
   # Functions : notifications
@@ -211,8 +205,6 @@
   
   
   }
-
-
 
 
 
