@@ -1,5 +1,7 @@
 # Libraries :
 {
+  
+  library(RPostgreSQL)
   # List of required libraries
   required_libraries <- c("pushoverr", "rjson", "jsonlite", "httr", "gmodels",
                           "foreach", "hms", "iterators", "chron",
@@ -21,6 +23,7 @@
     install_if_not_installed(library)
   }
   
+  drv <- dbDriver("PostgreSQL")
   
   
   pacman::p_load(pushoverr,rjson,jsonlite,httr,gmodels,foreach,hms,iterators,chron,sqldf,dplyr, 
