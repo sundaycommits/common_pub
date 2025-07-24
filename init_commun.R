@@ -81,16 +81,20 @@
     }
     
     char2_toTime      <- function(x) {
-      z <- paste0(substr(x, 1, 2), "h", substr(x, 4, 5))
+      x <- str_pad(as.character(x), 4, pad = "0")
+      z <- paste0(substr(x, 1, 2), ":", substr(x, 3, 4))
+      return(z)
     }
-    
+
     char3_toTime      <- function(x) {
-      z <- paste0(substr(x, 1, 2), ":", substr(x, 4, 5))
+      x <- str_pad(as.character(x), 4, pad = "0")
+      z <- paste0(substr(x, 1, 2), ":", substr(x, 3, 4))
+      return(z)
     }
-    
+
     char4_toTime      <- function(x) {
-      x <- as.character(x)
-      z <- paste0(substr(x, 1, 2), ":", substr(x, 4, 5))
+      x <- str_pad(as.character(x), 4, pad = "0")
+      z <- paste0(substr(x, 1, 2), ":", substr(x, 3, 4))
       return(z)
     }
     
@@ -151,10 +155,11 @@
     
     cleanValue <- function(x) {
       ind <- unlist(gregexpr('@', x))
-      y <-
-        ifelse(ind == -1L, gsub("[><]", "", x), gsub("[><]", "", substr(x, 1, ind -
-                                                                          1)))
-      y <- gsub("[mL/h]", "", gsub("[+]", "", x))
+      y <- ifelse(ind == -1L,
+                  gsub("[><]", "", x),
+                  gsub("[><]", "", substr(x, 1, ind - 1)))
+      y <- gsub("[mL/h]", "", gsub("[+]", "", y))
+      return(y)
     }
     
     less_func <- function(var, min) {
